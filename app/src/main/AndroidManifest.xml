@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Profil Mahasiswa PAB"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PraktikumPAB">
+        <activity
+            android:name=".PaymentSuccessActivity"
+            android:exported="false"
+            android:label="Pembayaran Berhasil" />
+        <activity
+            android:name=".PaymentConfirmationActivity"
+            android:exported="false"
+            android:label="Konfirmasi Pembayaran" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="Halaman Utama">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:label="Halaman Profile"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".TopUpDetailActivity"
+            android:exported="false"
+            android:label="Top Up Mobile Legends" />
+    </application>
+
+</manifest>
