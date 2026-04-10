@@ -103,7 +103,6 @@ fun HalamanDetailTopUp(
     var usernameInput by remember { mutableStateOf("") }
     val context = LocalContext.current
 
-    // Fungsi untuk mendapatkan resource banner berdasarkan nama game
     val bannerRes = when (namaGame) {
         "Mobile Legends" -> R.drawable.ml
         "Free Fire" -> R.drawable.freefire
@@ -157,7 +156,6 @@ fun HalamanDetailTopUp(
             contentPadding = PaddingValues(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            // 1. Banner Dinamis
             item {
                 Box(
                     modifier = Modifier
@@ -181,7 +179,6 @@ fun HalamanDetailTopUp(
                 Spacer(modifier = Modifier.height(8.dp))
             }
 
-            // 2. Input Username
             item {
                 Card(
                     modifier = Modifier.fillMaxWidth(),
@@ -205,7 +202,6 @@ fun HalamanDetailTopUp(
                 }
             }
 
-            // 3. Daftar Paket
             item {
                 Text("Daftar Paket", fontWeight = FontWeight.Bold, fontSize = 20.sp, color = Color(0xFF0F172A))
             }

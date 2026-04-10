@@ -28,7 +28,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.praktikumpab.ui.theme.PraktikumPABTheme
 
-// Data class dengan properti imageResId untuk ikon game
 data class GameData(
     val namaGame: String,
     val publisher: String,
@@ -41,7 +40,6 @@ class ProfileActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        // List game dengan masing-masing resource gambar dari drawable
         val listGame = listOf(
             GameData("Mobile Legends", "Moonton", "Diamond mulai dari Rp 1.500", R.drawable.kalea),
             GameData("Free Fire", "Garena", "Diamond mulai dari Rp 1.000", R.drawable.ff),
@@ -123,7 +121,6 @@ fun GameCard(game: GameData, onClick: () -> Unit) {
                 .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            // Bagian Gambar Ikon Game
             if (game.imageResId != null) {
                 Image(
                     painter = painterResource(id = game.imageResId),

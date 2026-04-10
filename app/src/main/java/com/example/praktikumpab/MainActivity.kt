@@ -25,7 +25,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.praktikumpab.ui.theme.PraktikumPABTheme
 
-// Menggunakan warna biru cerah
 val ColorPrimary = Color(0xFF03A9F4)
 val ColorBackground = Color(0xFFF8FAFC)
 val ColorTextPrimary = Color(0xFF1E293B)
@@ -63,7 +62,6 @@ fun HalamanUtama(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        // Judul Toko
         Text(
             text = "Mokit Store",
             fontSize = 32.sp,
@@ -75,28 +73,24 @@ fun HalamanUtama(
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Kotak Gambar / Banner dengan Gambar Baru
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(200.dp)
-                .clip(RoundedCornerShape(12.dp)) // Berikan radius pada gambar
-                .background(Color(0xFFCBD5E1)), // Warna latar belakang saat gambar dimuat
+                .clip(RoundedCornerShape(12.dp))
+                .background(Color(0xFFCBD5E1)),
             contentAlignment = Alignment.Center
         ) {
-            // Gunakan composable Image untuk menampilkan gambar
             Image(
-                // Gantilah R.drawable.banner_mokit dengan nama resource gambar Anda
                 painter = painterResource(id = R.drawable.mokit),
                 contentDescription = "Banner Mokit Store",
-                contentScale = ContentScale.Crop, // Memotong gambar agar pas dengan kotak
-                modifier = Modifier.fillMaxSize() // Isi seluruh ukuran Box
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.fillMaxSize()
             )
         }
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Garis Pemisah (Divider)
         Box(
             modifier = Modifier
                 .width(48.dp)
@@ -106,7 +100,6 @@ fun HalamanUtama(
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        // Jargon / Tagline
         Text(
             text = "Top Up Murah Sedunia!",
             fontSize = 20.sp,
@@ -116,9 +109,9 @@ fun HalamanUtama(
 
         Spacer(modifier = Modifier.height(12.dp))
 
-        // Deskripsi
         Text(
-            text = "Selamat datang di Mokit Store. Tempat terbaik untuk top up game favoritmu! Harga termurah, proses otomatis, aman, dan terpercaya 100%.",
+            text = "Selamat datang di Mokit Store. Tempat terbaik untuk top up game favoritmu! " +
+                    "Harga termurah, proses otomatis, aman, dan terpercaya 100%.",
             textAlign = TextAlign.Center,
             color = ColorTextSecondary,
             lineHeight = 22.sp
@@ -126,7 +119,6 @@ fun HalamanUtama(
 
         Spacer(modifier = Modifier.height(36.dp))
 
-        // Tombol Utama (Buka Daftar Game)
         Button(
             onClick = onGoToGameList,
             modifier = Modifier

@@ -27,7 +27,6 @@ class PaymentSuccessActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        // Menangkap nominal harga yang dilempar dari halaman konfirmasi
         val totalBayar = intent.getStringExtra("TOTAL_BAYAR") ?: "Rp 0"
 
         setContent {
@@ -35,7 +34,6 @@ class PaymentSuccessActivity : ComponentActivity() {
                 HalamanSukses(
                     totalBayar = totalBayar,
                     onBackToHome = {
-                        // Kembali ke halaman utama (MainActivity) dan menghapus tumpukan history halaman sebelumnya
                         val intent = Intent(this, MainActivity::class.java).apply {
                             flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
                         }
@@ -65,11 +63,10 @@ fun HalamanSukses(
             verticalArrangement = Arrangement.Center
         ) {
 
-            // Ikon Centang Hijau
             Icon(
                 imageVector = Icons.Filled.CheckCircle,
                 contentDescription = "Success Icon",
-                tint = Color(0xFF10B981), // Warna hijau sukses
+                tint = Color(0xFF10B981),
                 modifier = Modifier
                     .size(100.dp)
                     .clip(CircleShape)
@@ -78,7 +75,6 @@ fun HalamanSukses(
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            // Teks Status
             Text(
                 text = "Pembayaran Berhasil!",
                 fontSize = 24.sp,
@@ -96,7 +92,6 @@ fun HalamanSukses(
 
             Spacer(modifier = Modifier.height(32.dp))
 
-            // Card Detail Nominal
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(16.dp),
@@ -119,14 +114,13 @@ fun HalamanSukses(
                         text = totalBayar,
                         fontSize = 28.sp,
                         fontWeight = FontWeight.Bold,
-                        color = Color(0xFF1D72B8) // Warna biru
+                        color = Color(0xFF1D72B8)
                     )
                 }
             }
 
             Spacer(modifier = Modifier.height(48.dp))
 
-            // Tombol Kembali
             Button(
                 onClick = onBackToHome,
                 modifier = Modifier
