@@ -66,7 +66,7 @@ Proyek ini terbagi menjadi beberapa Activity utama yang saling terintegrasi:
 **Langkah-langkah:**
 1.  **Clone the Repo**:
     ```bash
-    git clone [https://github.com/Punyaadapaa/MokitStore.git](https://github.com/Punyaadapaa/MokitStore.git)
+    git clone [https://github.com/Hanip26/MokitStore.git]
     ```
 2.  **Import Project**: Buka Android Studio, pilih `Open` dan arahkan ke folder hasil clone.
 3.  **Sync Gradle**: Biarkan Android Studio mengunduh dependensi yang diperlukan.
