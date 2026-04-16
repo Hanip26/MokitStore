@@ -32,19 +32,47 @@
 
 ## 🛠️ Arsitektur & Teknologi
 
-Aplikasi ini dibangun dengan standar pengembangan Android modern:
-* **Language**: Kotlin (100%)
-* **UI Framework**: Jetpack Compose (Declarative UI)
-* **Components**: 
-    * `Scaffold` & `TopAppBar` untuk struktur halaman.
-    * `LazyColumn` untuk daftar game yang efisien.
-    * `State Management` (`remember`, `mutableStateOf`) untuk interaksi UI.
-    * `Intent System` untuk navigasi antar Activity dan pengiriman data (Parcelable/Extra).
-* **Resources**: Custom Drawables & Vector Graphics.
+Aplikasi ini dikembangkan menggunakan pendekatan modern Android dengan mengedepankan performa, skalabilitas, serta kemudahan dalam pemeliharaan kode. Seluruh pengembangan dilakukan menggunakan bahasa Kotlin (100%) yang memanfaatkan fitur modern seperti coroutines untuk pemrosesan asynchronous, null safety untuk meminimalkan error, serta extension function untuk meningkatkan keterbacaan kode.
+
+Pada sisi antarmuka, aplikasi ini menggunakan Jetpack Compose sebagai UI framework berbasis deklaratif yang memungkinkan pengembangan tampilan lebih cepat, fleksibel, dan reaktif terhadap perubahan state. Dengan pendekatan state-driven UI, setiap perubahan data secara otomatis akan memperbarui tampilan tanpa perlu manipulasi manual. Desain UI juga mengadopsi Material Design 3 untuk memberikan pengalaman pengguna yang modern dan konsisten.
+
+Arsitektur aplikasi menerapkan pola MVVM (Model-View-ViewModel) yang memisahkan logika bisnis, pengelolaan data, dan tampilan. ViewModel bertanggung jawab dalam mengelola state UI dan berkomunikasi dengan layer data, sehingga meningkatkan modularitas serta mempermudah proses testing. State management dilakukan menggunakan kombinasi `remember`, `mutableStateOf`, `rememberSaveable`, serta integrasi dengan StateFlow atau LiveData untuk pengelolaan state yang lebih kompleks.
+
+Untuk struktur tampilan, digunakan komponen seperti Scaffold sebagai kerangka utama layout, TopAppBar untuk navigasi, serta LazyColumn dan LazyRow untuk menampilkan daftar data secara efisien dengan performa optimal. Navigasi antar halaman dapat dilakukan menggunakan Intent maupun Navigation Compose untuk pendekatan single-activity yang lebih modern.
+
+Dalam pengelolaan data, aplikasi ini dapat menggunakan Room Database sebagai penyimpanan lokal berbasis SQLite, serta DataStore atau SharedPreferences untuk menyimpan preferensi pengguna. Repository pattern diterapkan untuk mengelola sumber data baik dari lokal maupun remote secara terpusat.
+
+Koneksi jaringan dilakukan menggunakan Retrofit yang dipadukan dengan OkHttp sebagai HTTP client, serta Kotlin Coroutines dan Flow untuk menangani proses asynchronous secara efisien. Untuk manajemen dependensi, digunakan Hilt atau Dagger guna menyederhanakan injeksi dependensi dan meningkatkan skalabilitas aplikasi.
+
+Dari sisi resource, aplikasi memanfaatkan custom drawables, vector graphics, serta material icons untuk memastikan tampilan tetap tajam dan konsisten di berbagai ukuran layar. Selain itu, pengujian dilakukan menggunakan unit testing (JUnit) dan UI testing (Compose Test) untuk menjaga kualitas aplikasi.
+
+Proses build dikelola menggunakan Gradle (Kotlin DSL), dengan pengembangan dilakukan di Android Studio serta version control menggunakan Git. Berbagai optimasi performa juga diterapkan, seperti menghindari recomposition yang tidak perlu pada Compose serta penggunaan komponen lazy untuk efisiensi rendering.
 
 ---
 
 ## 📁 Struktur Navigasi Proyek
+📦 Struktur Proyek
+├── app/src/
+│   ├── androidTest/              
+│   ├── main/
+│   │   ├── java/com/example/praktik...
+│   │   │   ├── ui/theme/         
+│   │   │   ├── MainActivity.kt                 
+│   │   │   ├── PaymentConfirmationActivity.kt  
+│   │   │   ├── PaymentSuccessActivity.kt       
+│   │   │   ├── ProfileActivity.kt              
+│   │   │   └── TopUpDetailActivity.kt          
+│   │   ├── res/                  
+│   │   └── AndroidManifest.xml   
+│   └── test/                     
+├── gradle/
+│   ├── wrapper/                  
+│   └── libs.versions.toml        
+├── build.gradle.kts (Project)    
+├── build.gradle.kts (Module)     
+├── gradle.properties             
+├── settings.gradle.kts           
+└── README.md                     
 
 Proyek ini terbagi menjadi beberapa Activity utama yang saling terintegrasi:
 
