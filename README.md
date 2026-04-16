@@ -51,7 +51,7 @@ Proses build dikelola menggunakan Gradle (Kotlin DSL), dengan pengembangan dilak
 ---
 
 ## 📁 Struktur Navigasi Proyek
-📦 Struktur Proyek
+<pre>📦 Struktur Proyek
 ├── app/src/
 │   ├── androidTest/              
 │   ├── main/
@@ -73,6 +73,7 @@ Proses build dikelola menggunakan Gradle (Kotlin DSL), dengan pengembangan dilak
 ├── gradle.properties             
 ├── settings.gradle.kts           
 └── README.md                     
+</pre>
 
 Proyek ini terbagi menjadi beberapa Activity utama yang saling terintegrasi:
 
