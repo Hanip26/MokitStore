@@ -4,7 +4,7 @@
 [![Compose Version](https://img.shields.io/badge/Jetpack%20Compose-2023.10.01-green.svg)](https://developer.android.com/jetpack/compose)
 [![Platform](https://img.shields.io/badge/Platform-Android-brightgreen.svg)](https://developer.android.com/)
 
-**Mokit Store** adalah aplikasi Android berbasis Mobile yang dikembangkan menggunakan **Jetpack Compose**. Aplikasi ini menyediakan alur transaksi lengkap untuk kebutuhan *top-up* berbagai judul game populer dengan antarmuka yang modern, bersih, dan intuitif.
+**Mokit Store** adalah aplikasi Android berbasis Mobile yang dikembangkan menggunakan **Jetpack Compose**. Aplikasi ini menyediakan alur transaksi lengkap untuk kebutuhan *top-up* berbagai judul game populer dengan antarmuka yang modern, bersih, dan intuitif. 
 
 ---
 
